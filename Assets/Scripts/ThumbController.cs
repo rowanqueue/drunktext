@@ -12,11 +12,14 @@ public class ThumbController : MonoBehaviour
 	public Vector2 leftInput;
 	public Vector2 leftXConstraints;
 	public Vector2 leftYConstraints;
+	public bool leftPressing;
+	
 	public GameObject thumbR;
-	Rigidbody rrb;
+	private Rigidbody rrb;
 	public Vector2 rightInput;
 	public Vector2 rightXConstraints;
 	public Vector2 rightYConstraints;
+	public bool rightPressing;
 
 	public float mod;
 	// Use this for initialization
@@ -29,32 +32,48 @@ public class ThumbController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		Movement();
+		HandleInput();
 	}
 
 	void FixedUpdate()
 	{
 		lrb.AddForce(leftInput*mod);
 		rrb.AddForce(rightInput*mod);
-		DrunkenShaking();
+		DrunkenShaking(thumbL,lrb,leftXConstraints,leftYConstraints,0.0f);
+		DrunkenShaking(thumbR,rrb,rightXConstraints,rightYConstraints,5.0f);
+		if (leftPressing)
+		{
+			//LERP THAT FUCKER!!
+		}
 	}
 
-	void Movement()
+	void HandleInput()
 	{
 		//left thumb
 		float x = Input.GetAxis("HorizontalLeft");
 		float y = Input.GetAxis("VerticalLeft");
 		leftInput = new Vector2(x,y).normalized*0.05f;
+
+		float lPress = Input.GetAxis("FireLeft");
+		if (lPress > 0)
+		{
+			if (leftPressing == false)
+			{
+				leftPressing = true;
+			}
+		}
 		
 		//right thumb
 		x = Input.GetAxis("HorizontalRight");
 		y = Input.GetAxis("VerticalRight");
-		rightInput += new Vector2(x, y).normalized * 0.05f;
+		rightInput = new Vector2(x, y).normalized * 0.05f;
+
+		float rPress = Input.GetAxis("FireRight");
 	}
-	void DrunkenShaking()
+	void DrunkenShaking(GameObject thumb,Rigidbody rb, Vector2 xConstraints,Vector2 yConstraints,float offset)
 	{
 		//CHANGE THIS SHIT TO FORCES
-		Vector2 perlin = new Vector2(Mathf.PerlinNoise(Time.time*2f, 0),Mathf.PerlinNoise(0,Time.time*2f));
+		Vector2 perlin = new Vector2(Mathf.PerlinNoise(Time.time*2f+offset, 0),Mathf.PerlinNoise(0,Time.time*2f+offset));
 		if (perlin.x < 0.5f)
 		{
 			perlin.x = -perlin.x;
@@ -64,54 +83,23 @@ public class ThumbController : MonoBehaviour
 		{
 			perlin.y = -perlin.y;
 		}
-		lrb.AddForce(perlin.normalized*2f);
-		lrb.velocity = Vector3.ClampMagnitude(lrb.velocity, 0.75f);
-		if (thumbL.transform.position.x < leftXConstraints.x)//push to the right!
+		rb.AddForce(perlin.normalized*2f);
+		if (thumb.transform.position.x < xConstraints.x)//push to the right!
 		{
-			lrb.AddForce(Vector2.right*0.25f,ForceMode.Impulse);
+			rb.AddForce(Vector2.right,ForceMode.Impulse);
 		}
-		else if (thumbL.transform.position.x > leftXConstraints.y)//push to the left!
+		else if (thumb.transform.position.x > xConstraints.y)//push to the left!
 		{
-			lrb.AddForce(Vector2.left*0.25f,ForceMode.Impulse);
+			rb.AddForce(Vector2.left,ForceMode.Impulse);
 		}
-		if (thumbL.transform.position.y < leftYConstraints.x)//push up
+		if (thumb.transform.position.y < yConstraints.x)//push up
 		{
-			lrb.AddForce(Vector2.up*0.25f,ForceMode.Impulse);
+			rb.AddForce(Vector2.up,ForceMode.Impulse);
 		}
-		else if (thumbL.transform.position.y > leftYConstraints.y)//push down
+		else if (thumb.transform.position.y > yConstraints.y)//push down
 		{
-			lrb.AddForce(Vector2.down*0.25f,ForceMode.Impulse);
+			rb.AddForce(Vector2.down,ForceMode.Impulse);
 		}
-		
-		perlin = new Vector2(Mathf.PerlinNoise(Time.time, 0),Mathf.PerlinNoise(0,Time.time));
-		if (perlin.x < 0.5f)
-		{
-			perlin.x = -perlin.x;
-		}
-
-		if (perlin.y < 0.5f)
-		{
-			perlin.y = -perlin.y;
-		}
-		rrb.AddForce(perlin.normalized*2f);
-		rrb.velocity = Vector3.ClampMagnitude(rrb.velocity, 0.75f);
-		if (thumbR.transform.position.x < rightXConstraints.x)//push to the right!
-		{
-			Debug.Log("h");
-			rrb.AddForce(Vector2.right*0.25f,ForceMode.Impulse);
-		}
-		else if (thumbR.transform.position.x > rightXConstraints.y)//push to the left!
-		{
-			rrb.AddForce(Vector2.left*0.25f,ForceMode.Impulse);
-		}
-		if (thumbR.transform.position.y < rightYConstraints.x)//push up
-		{
-			rrb.AddForce(Vector2.up*0.25f,ForceMode.Impulse);
-		}
-		else if (thumbR.transform.position.y > rightYConstraints.y)//push down
-		{
-			rrb.AddForce(Vector2.down*0.25f,ForceMode.Impulse);
-		}
-		
+		rb.velocity = Vector3.ClampMagnitude(rb.velocity, 0.75f);
 	}
 }

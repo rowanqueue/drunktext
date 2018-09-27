@@ -12,19 +12,20 @@
     <session id="-1905824724">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.38" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="1676" />
+          <entry key="cs" value="2213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="1676" />
+          <entry key="C#" value="2213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -40,30 +41,42 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/ThumbController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+            <state relative-caret-position="416">
+              <caret line="85" column="90" selection-start-line="85" selection-start-column="90" selection-end-line="85" selection-end-column="90" />
               <folding>
-                <marker date="1538075758027" expanded="true" signature="6:78" ph="..." />
-                <marker date="1538075758027" expanded="true" signature="79:141" ph="/* usage: put it on a gamemanager ... */" />
-                <marker date="1538075758027" expanded="true" signature="186:1839" ph="{...}" />
-                <marker date="1538075758027" expanded="true" signature="407:542" ph="{...}" />
-                <marker date="1538075758027" expanded="true" signature="596:616" ph="{...}" />
-                <marker date="1538075758027" expanded="true" signature="637:694" ph="{...}" />
-                <marker date="1538075758027" expanded="true" signature="712:1024" ph="{...}" />
-                <marker date="1538075758027" expanded="true" signature="1047:1837" ph="{...}" />
-                <marker date="1538075758027" expanded="true" signature="1207:1240" ph="{...}" />
-                <marker date="1538075758027" expanded="true" signature="1264:1297" ph="{...}" />
-                <marker date="1538075758027" expanded="true" signature="1402:1834" ph="/* Debug.Log(lrb.velocity.magnitude); ... */" />
+                <marker date="1538078305623" expanded="true" signature="6:121" ph="..." />
+                <marker date="1538078305623" expanded="true" signature="123:185" ph="/* usage: put it on a gamemanager ... */" />
+                <marker date="1538078305623" expanded="true" signature="230:2982" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="586:676" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="730:750" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="771:860" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="878:1187" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="1210:2980" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="1369:1402" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="1426:1459" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="1635:1699" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="1779:1842" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="1907:1968" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="2040:2103" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="2217:2250" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="2274:2307" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="2484:2567" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="2648:2711" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="2777:2838" ph="{...}" />
+                <marker date="1538078305623" expanded="true" signature="2911:2974" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ThumbController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -88,17 +101,18 @@
     <option name="width" value="1354" />
     <option name="height" value="695" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="UnityExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="FileSystemExplorer" />
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
+      </pane>
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
       </pane>
     </panes>
   </component>
@@ -146,11 +160,12 @@
       <option name="presentableId" value="Default" />
       <updated>1538070004035</updated>
       <workItem from="1538070011646" duration="5597000" />
+      <workItem from="1538076863404" duration="1611000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5597000" />
+    <option name="totallyTimeSpent" value="7208000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -164,17 +179,9 @@
   <component name="ToolWindowManager">
     <frame x="226" y="77" width="1354" height="695" extended-state="0" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2851623" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28979906" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="NuGet" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -182,12 +189,20 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Errors In Solution" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="bottom" id="NuGet" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unity" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unit Tests" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="13" />
+      <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="5" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,29 +224,32 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/RigidBodyVehicle.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/RigidBodyVehicle.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/ThumbController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+        <state relative-caret-position="416">
+          <caret line="85" column="90" selection-start-line="85" selection-start-column="90" selection-end-line="85" selection-end-column="90" />
           <folding>
-            <marker date="1538075758027" expanded="true" signature="6:78" ph="..." />
-            <marker date="1538075758027" expanded="true" signature="79:141" ph="/* usage: put it on a gamemanager ... */" />
-            <marker date="1538075758027" expanded="true" signature="186:1839" ph="{...}" />
-            <marker date="1538075758027" expanded="true" signature="407:542" ph="{...}" />
-            <marker date="1538075758027" expanded="true" signature="596:616" ph="{...}" />
-            <marker date="1538075758027" expanded="true" signature="637:694" ph="{...}" />
-            <marker date="1538075758027" expanded="true" signature="712:1024" ph="{...}" />
-            <marker date="1538075758027" expanded="true" signature="1047:1837" ph="{...}" />
-            <marker date="1538075758027" expanded="true" signature="1207:1240" ph="{...}" />
-            <marker date="1538075758027" expanded="true" signature="1264:1297" ph="{...}" />
-            <marker date="1538075758027" expanded="true" signature="1402:1834" ph="/* Debug.Log(lrb.velocity.magnitude); ... */" />
+            <marker date="1538078305623" expanded="true" signature="6:121" ph="..." />
+            <marker date="1538078305623" expanded="true" signature="123:185" ph="/* usage: put it on a gamemanager ... */" />
+            <marker date="1538078305623" expanded="true" signature="230:2982" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="586:676" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="730:750" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="771:860" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="878:1187" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="1210:2980" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="1369:1402" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="1426:1459" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="1635:1699" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="1779:1842" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="1907:1968" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="2040:2103" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="2217:2250" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="2274:2307" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="2484:2567" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="2648:2711" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="2777:2838" ph="{...}" />
+            <marker date="1538078305623" expanded="true" signature="2911:2974" ph="{...}" />
           </folding>
         </state>
       </provider>

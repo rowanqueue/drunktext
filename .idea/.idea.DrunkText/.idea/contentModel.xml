@@ -7,7 +7,9 @@
     <e p="C:\Users\johnn\Documents\UnityProjects\InterDev\DrunkText" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets\Scripts" t="Include">
+        <e p="Key.cs" t="Include" />
         <e p="ThumbController.cs" t="Include" />
+        <e p="Writer.cs" t="Include" />
       </e>
       <e p="DrunkText.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

@@ -11,3 +11,20 @@ Player autowalks, only controls are hitting the keys
 First script: no differences due to bad replies
 Second: little differences if bad
 Third: Major differences
+
+FIRST THIGN YOU DO IN THE GAME IS TYPE IN YOUR FUCKING NAME!!!!!
+
+NEED TO BE ABLE TO SEND IMAGES AND HAVE MULTILINE TEXTS
+
+CONTROLS:
+WASD - Left Thumb Movement
+E - Left Thumb Press
+C - Left Foot Step
+Q - Left Foot Far Step
+
+IJKL - Right Thumb Movement
+U - Right Thumb Press
+N - Right Foot Step
+O - Right Foot Far Step
+
+F/H - Hold to look up

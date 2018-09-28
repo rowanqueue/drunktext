@@ -53,11 +53,10 @@ public class ThumbController : MonoBehaviour
 		{
 			if (thumbL.transform.position.z < pressDepth + regularZ)
 			{
-				lrb.AddForce(new Vector3(0,0,1),ForceMode.Impulse);
+				lrb.AddForce(new Vector3(0,0,1)*2f,ForceMode.Impulse);
 			}
 			else
 			{
-				lrb.AddForce(new Vector3(0,0,-1),ForceMode.Impulse);
 				leftPressing = false;
 			}
 		}
@@ -67,16 +66,19 @@ public class ThumbController : MonoBehaviour
 			{
 				lrb.velocity = new Vector3(lrb.velocity.x,lrb.velocity.y,0);
 			}
+			else
+			{
+				lrb.AddForce(new Vector3(0,0,-1)*2f,ForceMode.Impulse);
+			}
 		}
 		if (rightPressing)
 		{
 			if (thumbR.transform.position.z < pressDepth + regularZ)
 			{
-				rrb.AddForce(new Vector3(0,0,1),ForceMode.Impulse);
+				rrb.AddForce(new Vector3(0,0,1)*2f,ForceMode.Impulse);
 			}
 			else
 			{
-				rrb.AddForce(new Vector3(0,0,-1),ForceMode.Impulse);
 				rightPressing = false;
 			}
 		}
@@ -85,6 +87,10 @@ public class ThumbController : MonoBehaviour
 			if (thumbR.transform.position.z <= regularZ)
 			{
 				rrb.velocity = new Vector3(rrb.velocity.x,rrb.velocity.y,0);
+			}
+			else
+			{
+				rrb.AddForce(new Vector3(0,0,-1)*2f,ForceMode.Impulse);
 			}
 		}
 	}
@@ -97,7 +103,7 @@ public class ThumbController : MonoBehaviour
 		leftInput = new Vector2(x,y).normalized;
 
 		//float lPress = Input.GetAxisRaw("FireLeft");
-		if (Input.GetButtonDown("FireLeft"))
+		if (Input.GetButton("FireLeft"))
 		{
 			if (leftPressing == false)
 			{
@@ -110,7 +116,7 @@ public class ThumbController : MonoBehaviour
 		y = Input.GetAxis("VerticalRight");
 		rightInput = new Vector2(x, y).normalized;
 
-		if (Input.GetButtonDown("FireRight"))
+		if (Input.GetButton("FireRight"))
 		{
 			if (rightPressing == false)
 			{

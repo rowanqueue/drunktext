@@ -6,8 +6,10 @@
     <e p="C:\Users\johnn\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_DrunkText.-1356971782.00" t="ExcludeRecursive" />
     <e p="C:\Users\johnn\Documents\UnityProjects\InterDev\DrunkText" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets\notes.txt" t="Include" />
       <e p="Assets\Scripts" t="Include">
         <e p="Key.cs" t="Include" />
+        <e p="KeyHold.cs" t="Include" />
         <e p="ThumbController.cs" t="Include" />
         <e p="Writer.cs" t="Include" />
       </e>

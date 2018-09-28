@@ -1,0 +1,13 @@
+Procedurally generated streets:
+-lampposts
+-passersby
+-buildings (like the sides you normally see in Manhattan
+-crosswalks (that you stop at half the time)
+
+Camera shakes from headbob while you walk
+
+Player autowalks, only controls are hitting the keys
+
+First script: no differences due to bad replies
+Second: little differences if bad
+Third: Major differences

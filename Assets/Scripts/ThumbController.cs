@@ -44,8 +44,8 @@ public class ThumbController : MonoBehaviour
 	{
 		lrb.AddForce(leftInput*mod);
 		rrb.AddForce(rightInput*mod);
-		//DrunkenShaking(thumbL,lrb,0.0f);
-		//DrunkenShaking(thumbR,rrb,5.0f);
+		DrunkenShaking(thumbL,lrb,0.0f);
+		DrunkenShaking(thumbR,rrb,5.0f);
 		Constrain(thumbL,lrb,leftXConstraints,leftYConstraints);
 		Constrain(thumbR,rrb,rightXConstraints,rightYConstraints);
 		

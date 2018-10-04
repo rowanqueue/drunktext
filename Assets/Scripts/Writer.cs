@@ -11,14 +11,18 @@ public class Writer : MonoBehaviour
 	public string written;
 	public List<string> archive;
 	public Text display;
-	public Text[] log;
+	public Text yourNextLine;
+	public Text[] log = new Text[6];
 	private string[] logLines;
 	public Transform can;
-
+	private bool cursorDisplayed;
+	private float cursorTime;
 
 	public List<string> momTexts;//what your mom says
 	public int momInt;
 	public List<string> yourTexts;//what youre supposed to say
+	public int yourInt;
+	
 	// Use this for initialization
 	void Awake ()
 	{
@@ -26,25 +30,23 @@ public class Writer : MonoBehaviour
 		momTexts = new List<string>();
 		yourTexts = new List<string>();
 		ReadTexts();
+		//momTexts.Add("Do you know where the dog's pills are?");
+		//momTexts.Add("Really?");
+		//momTexts.Add("I swear you were the last one to see them.");
+		//yourTexts.Add("uh tbh idk");
+		//yourTexts.Add("wow");
 		logLines = new string[6];
-		log = new Text[6];
-		int i = 0;
-		Rect pos = new Rect(0,160+251,160,20);
-		foreach (string line in logLines)
-		{
-			GameObject textObj = Instantiate(Resources.Load("Log"), can) as GameObject;
-			Text text = textObj.GetComponent<Text>();
-			text.rectTransform.position = new Vector2(446,pos.position.y+(i*20));
-			log[i] = text;
-			i++;
-		}
+		//log = new Text[6];
+		//int i = 0;
+		//Rect pos = new Rect(0,160+251,160,20);
+		
 		writeLog(momTexts[momInt]);
 	}
 
 	void ReadTexts()
 	{
 		string path = "Assets/Resources/";
-		//string path = "TemplateData/Seeds/";
+		//string path = "";
 		path+="DrunkText - Texts.csv";
 		//Debug.Log(path);
 		StreamReader reader = new StreamReader(path);
@@ -122,8 +124,18 @@ public class Writer : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		display.text = written;
-		
+		if (Time.time > cursorTime)
+		{
+			cursorTime = Time.time + 0.5f;
+			cursorDisplayed = !cursorDisplayed;
+		}
+		string displayText = written;
+		if (cursorDisplayed)
+		{
+			displayText += "|";
+		}
+		display.text = displayText;
+		yourNextLine.text = yourTexts[yourInt];
 	}
 
 	public void Submit()
@@ -134,6 +146,7 @@ public class Writer : MonoBehaviour
 		written = "";
 		momInt++;
 		writeLog(momTexts[momInt]);
+		yourInt++;
 	}
 	public void TapKey(char c)
 	{

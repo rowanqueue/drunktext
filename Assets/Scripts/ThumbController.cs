@@ -158,7 +158,7 @@ public class ThumbController : MonoBehaviour
 		{
 			perlin.y = -perlin.y;
 		}
-		rb.AddForce(perlin.normalized*2f);
+		rb.AddForce(perlin.normalized);
 		rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
 	}
 }

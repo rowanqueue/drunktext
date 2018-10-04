@@ -4,6 +4,8 @@ Procedurally generated streets:
 -buildings (like the sides you normally see in Manhattan
 -crosswalks (that you stop at half the time)
 
+FUMBLECORE
+
 Camera shakes from headbob while you walk
 
 Player autowalks, only controls are hitting the keys

@@ -24,10 +24,6 @@ public class HeadShaking : MonoBehaviour
 
 
 		float walkerMod = 1.0f;//yourhead shakes less when you're not walking
-		if (walker.moving == false)
-		{
-			walkerMod = 0.25f;
-		}
 		transform.position = constantPos + new Vector3(xChange, 0, 0)*mod*walkerMod;
 	}
 }

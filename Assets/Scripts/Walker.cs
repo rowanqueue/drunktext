@@ -6,31 +6,32 @@ public class Walker : MonoBehaviour
 {
 	public float mod;
 
-	public bool moving;
+	public Vector3 moveInput;//move the player to the left or right
+
 	// Use this for initialization
 	void Start ()
 	{
-		moving = true;
+		moveInput = Vector3.zero;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey(KeyCode.C) && Input.GetKey(KeyCode.N))
+		if (Input.GetKey(KeyCode.C))
 		{
-			moving = false;
+			moveInput = Vector3.left;
 		}
 
-		if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.O))
+		if (Input.GetKey(KeyCode.N))
 		{
-			moving = true;
+			moveInput = Vector3.right;
 		}
 	}
 
 	void FixedUpdate()
 	{
-		if (moving)
-		{
-			transform.position -= transform.forward * mod;	
-		}
+		
+		transform.position -= transform.forward * mod;
+		transform.position -= moveInput*mod;
+		moveInput = Vector3.zero;
 	}
 }

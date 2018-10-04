@@ -1,14 +1,12 @@
 Procedurally generated streets:
 -lampposts
+-fire hydrants
 -passersby
 -buildings (like the sides you normally see in Manhattan
 -crosswalks (that you stop at half the time)
 
 FUMBLECORE
 
-Camera shakes from headbob while you walk
-
-Player autowalks, only controls are hitting the keys
 
 First script: no differences due to bad replies
 Second: little differences if bad
@@ -18,17 +16,14 @@ FIRST THIGN YOU DO IN THE GAME IS TYPE IN YOUR FUCKING NAME!!!!!
 
 NEED TO BE ABLE TO SEND IMAGES AND HAVE MULTILINE TEXTS
 
-OKAY MAKE IT SO HEAD SHAKE SLOWS WHEN STANDING STILL!!
 
 CONTROLS:
 WASD - Left Thumb Movement
 E - Left Thumb Press
-C - Left Foot Step
-Q - Left Foot Far Step
+C - Left Movement
 
 IJKL - Right Thumb Movement
 U - Right Thumb Press
-N - Right Foot Step
-O - Right Foot Far Step
+N - Right Movement
 
 F/H - Hold to look up

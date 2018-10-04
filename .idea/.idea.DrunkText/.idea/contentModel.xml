@@ -8,9 +8,11 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets\notes.txt" t="Include" />
       <e p="Assets\Scripts" t="Include">
+        <e p="BlockHandler.cs" t="Include" />
         <e p="HeadShaking.cs" t="Include" />
         <e p="Key.cs" t="Include" />
         <e p="KeyHold.cs" t="Include" />
+        <e p="NextBlockTrigger.cs" t="Include" />
         <e p="ThumbController.cs" t="Include" />
         <e p="Walker.cs" t="Include" />
         <e p="Writer.cs" t="Include" />

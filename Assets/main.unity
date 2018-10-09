@@ -2800,6 +2800,7 @@ MonoBehaviour:
   - {fileID: 768704005}
   - {fileID: 475736788}
   can: {fileID: 1700924864}
+  texts: {fileID: 0}
   momTexts: []
   momInt: 0
   yourTexts: []
@@ -3451,14 +3452,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1876966309627694, guid: e97d2af4690feaf4fb7e173643ff1036, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1770010583282212, guid: e97d2af4690feaf4fb7e173643ff1036, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e97d2af4690feaf4fb7e173643ff1036, type: 2}
   m_IsPrefabParent: 0
@@ -4023,6 +4016,7 @@ MonoBehaviour:
   - {fileID: 768704005}
   - {fileID: 475736788}
   can: {fileID: 1700924864}
+  texts: {fileID: 4900000, guid: b3363a24f84101842ab2abd6c5a3e8d3, type: 3}
   momTexts: []
   momInt: 0
   yourTexts: []

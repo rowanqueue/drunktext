@@ -18,6 +18,8 @@ public class Writer : MonoBehaviour
 	private bool cursorDisplayed;
 	private float cursorTime;
 
+
+	public TextAsset texts;
 	public List<string> momTexts;//what your mom says
 	public int momInt;
 	public List<string> yourTexts;//what youre supposed to say
@@ -45,12 +47,7 @@ public class Writer : MonoBehaviour
 
 	void ReadTexts()
 	{
-		string path = "Assets/Resources/";
-		//string path = "";
-		path+="DrunkText - Texts.csv";
-		//Debug.Log(path);
-		StreamReader reader = new StreamReader(path);
-		string[] lines = reader.ReadToEnd().Split('\n');
+		string[] lines = texts.text.Split('\n');
 		int i = 0;
 		foreach (string s in lines)
 		{

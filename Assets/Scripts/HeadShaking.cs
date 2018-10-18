@@ -5,15 +5,25 @@ using UnityEngine;
 public class HeadShaking : MonoBehaviour
 {
 	private Vector3 constantPos;
-
 	public float mod;
-
 	private Walker walker;
+	private Vector3 originalPos;
+	public Transform cameraEndPos;
+	private float durationMove;
+	private float duration;
+	
+	
+	private bool knocked;
+
+	public MeshRenderer cover;
 	// Use this for initialization
 	void Start ()
 	{
 		constantPos = transform.position;
 		walker = GameObject.FindObjectOfType<Walker>();
+		originalPos = transform.position;
+		cover.material.color = new Color(0, 0, 0, 0f);
+		cover.gameObject.SetActive(true);
 	}
 	
 	// Update is called once per frame
@@ -23,7 +33,44 @@ public class HeadShaking : MonoBehaviour
 		xChange = (xChange * 2f) - 1f;
 
 
-		float walkerMod = 1.0f;//yourhead shakes less when you're not walking
-		transform.position = constantPos + new Vector3(xChange, 0, 0)*mod*walkerMod;
+		if (Writer.me.sheKnows)
+		{
+			transform.position = Vector3.Lerp(originalPos, cameraEndPos.position, durationMove);
+			durationMove += Time.deltaTime*1.25f;
+		}
+		else
+		{
+			float walkerMod = 1.0f;//yourhead shakes less when you're not walking
+			if (knocked)
+			{
+				walkerMod *= 3f;
+			}
+			transform.position = constantPos + new Vector3(xChange, 0, 0)*mod*walkerMod;
+		}
+
+		if (knocked)
+		{
+			duration += Time.deltaTime*2f;
+			if (duration < 1)//fade in
+			{
+				cover.material.color = Color.Lerp(new Color(0, 0, 0, 0), new Color(0, 0, 0, 1), duration+0.2f);
+			}
+			else//fade out
+			{
+				cover.material.color = Color.Lerp(new Color(0, 0, 0, 1), new Color(0, 0, 0, 0), duration-1-0.4f);
+			}
+
+			if (duration > 2.4f)
+			{
+				knocked = false;
+			}
+		}
+	}
+
+	public void KnockOut()
+	{
+		mod += mod* 0.1f;
+		duration = 0;
+		knocked = true;
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,15 +11,18 @@ public class Writer : MonoBehaviour
 
 	public string written;
 	public List<string> archive;
-	public Text display;
-	public Text yourNextLine;
-	public Text[] log = new Text[6];
+	public TextMesh display;
+	public TextMesh yourNextLine;
+	public TextMesh[] log = new TextMesh[6];
 	private string[] logLines;
 	public Transform can;
 	private bool cursorDisplayed;
 	private float cursorTime;
 
-
+	public float doubt;
+	public float loseAmount;
+	public bool sheKnows;
+	
 	public TextAsset texts;
 	public List<string> momTexts;//what your mom says
 	public int momInt;
@@ -73,7 +77,7 @@ public class Writer : MonoBehaviour
 		}
 
 		logLines[0] = text;
-		foreach (Text textDisplay in log)
+		foreach (TextMesh textDisplay in log)
 		{
 			textDisplay.text = "";
 		}
@@ -85,7 +89,9 @@ public class Writer : MonoBehaviour
 			{
 				if (logLines[i][0] == '@')//you sent it
 				{
-					log[i].alignment = TextAnchor.MiddleRight;
+					//log[i].alignment = TextAnchor.MiddleRight;
+					log[i].transform.localPosition = new Vector3(-2.65f, log[i].transform.localPosition.y,log[i].transform.localPosition.z);
+					log[i].anchor = TextAnchor.UpperLeft;
 					if (logLines[i].Length == 1)
 					{
 						log[i].text = " ";
@@ -107,7 +113,9 @@ public class Writer : MonoBehaviour
 					{
 						log[i].text = logLines[i];
 					}
-					log[i].alignment = TextAnchor.MiddleLeft;
+					//log[i].alignment = TextAnchor.MiddleLeft;
+					log[i].transform.localPosition = new Vector3(2.65f, log[i].transform.localPosition.y,log[i].transform.localPosition.z);
+					log[i].anchor = TextAnchor.UpperRight;
 				}	
 			}
 		}
@@ -132,18 +140,59 @@ public class Writer : MonoBehaviour
 			displayText += "|";
 		}
 		display.text = displayText;
-		yourNextLine.text = yourTexts[yourInt];
+		if (sheKnows)
+		{
+			yourNextLine.text = "";
+		}
+		else
+		{
+			yourNextLine.text = yourTexts[yourInt];	
+		}
 	}
 
+	public void MomParse(string submit, string actualLine)
+	{
+		int numRight = 0;
+		List<char> usedAlready = new List<char>();
+		foreach (char c in submit)
+		{
+			if (actualLine.Contains(c.ToString()))
+			{
+				if (!usedAlready.Contains(c))
+				{
+					numRight++;
+					usedAlready.Add(c);
+				}
+			}
+		}
+
+		if (numRight >= 2)
+		{
+			doubt += 0.05f;
+		}
+		else
+		{
+			doubt += 0.35f;
+		}
+	}
 	public void Submit()
 	{
 		written = "@" + written;
 		archive.Add(written);
 		writeLog(written);
 		written = "";
+		MomParse(written,yourTexts[yourInt]);
 		momInt++;
-		writeLog(momTexts[momInt]);
-		yourInt++;
+		if (doubt > loseAmount)//mom knows!!!!
+		{
+			writeLog("Wait... are you drunk?");
+			sheKnows = true;
+		}
+		else
+		{
+			writeLog(momTexts[momInt]);
+			yourInt++;
+		}
 	}
 	public void TapKey(char c)
 	{
@@ -159,7 +208,10 @@ public class Writer : MonoBehaviour
 				}
 				break;
 			default:
-				written += c;
+			    if(written.Length < 19)
+			    {
+			        written +=c;
+			    }
 				break;
 		}
 	}

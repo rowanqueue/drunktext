@@ -7,7 +7,6 @@ public class Walker : MonoBehaviour
 	public float mod;
 
 	public Vector3 moveInput;//move the player to the left or right
-
 	// Use this for initialization
 	void Start ()
 	{
@@ -33,5 +32,7 @@ public class Walker : MonoBehaviour
 		transform.position -= transform.forward * mod;
 		transform.position -= moveInput*mod;
 		moveInput = Vector3.zero;
+		transform.position = new Vector3(Mathf.Clamp(transform.position.x, -9.45f, 11.8f), transform.position.y,
+			transform.position.z);
 	}
 }

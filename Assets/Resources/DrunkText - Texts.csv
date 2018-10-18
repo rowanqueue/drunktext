@@ -1,12 +1,14 @@
 Who,Text
-M,Hey do you know where the dog's pills are?
-@,no??
+M,Hey do you know where;
+M,the dog's pills are?
+@,no
 M,Really?;
-M,I'm pretty sure you were the last one to use them.
-@,i didnt eat them tho
-M,No I mean you gave them to the dog.
-@,uh maybe theyre in the bathtub?
+M,I'm pretty sure you were;
+M,the last one to use them.
+@,idk
+M,"C'mon at least guess."
+@,tub
 M,Why would they be there?
-@,good question
-@,mom??
+@,uhh
+@,mom
 M,... They were in the tub.

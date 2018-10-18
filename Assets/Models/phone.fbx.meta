@@ -1,16 +1,81 @@
 fileFormatVersion: 2
-guid: b44e1a03c4581774b9aeed73cbacefdf
-timeCreated: 1539290268
+guid: 95685d7d4f7a91f47bb158bff160686f
+timeCreated: 1539800162
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: Material
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: SM_Shape_HumanPlaceholder
+    100000: group
+    100002: group1
+    100004: group2
+    100006: pasted__pCube1
+    100008: pasted__pCube7
+    100010: pasted__pCube7 1
+    100012: pCube1
+    100014: pCube2
+    100016: pCube3
+    100018: pCube4
+    100020: pCube5
+    100022: pCube6
+    100024: pCube7
+    100026: pCylinder1
+    100028: //RootNode
+    100030: transform1
+    100032: transform2
+    100034: transform3
+    100036: transform4
+    100038: transform5
+    100040: transform6
+    100042: group1_pasted__pCube7
+    100044: transform10
+    100046: transform7
+    100048: transform8
+    100050: transform9
+    400000: group
+    400002: group1
+    400004: group2
+    400006: pasted__pCube1
+    400008: pasted__pCube7
+    400010: pasted__pCube7 1
+    400012: pCube1
+    400014: pCube2
+    400016: pCube3
+    400018: pCube4
+    400020: pCube5
+    400022: pCube6
+    400024: pCube7
+    400026: pCylinder1
+    400028: //RootNode
+    400030: transform1
+    400032: transform2
+    400034: transform3
+    400036: transform4
+    400038: transform5
+    400040: transform6
+    400042: group1_pasted__pCube7
+    400044: transform10
+    400046: transform7
+    400048: transform8
+    400050: transform9
+    2100000: lambert1
+    2300000: pasted__pCube7
+    2300002: pasted__pCube7 1
+    2300004: pCube6
+    2300006: pCube7
+    2300008: pCylinder1
+    2300010: group1_pasted__pCube7
+    3300000: pasted__pCube7
+    3300002: pasted__pCube7 1
+    3300004: pCube6
+    3300006: pCube7
+    3300008: pCylinder1
+    3300010: group1_pasted__pCube7
+    4300000: pCube6
+    4300002: pCube7
+    4300004: pasted__pCube7
+    4300006: pasted__pCube7
+    4300008: pCylinder1
+    4300010: group1_pasted__pCube7
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -42,7 +107,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 120
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

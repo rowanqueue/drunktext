@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Walker : MonoBehaviour
 {
+	public static Walker me;
 	public float mod;
 
 	public Vector3 moveInput;//move the player to the left or right
 	// Use this for initialization
 	void Start ()
 	{
+		me = this;
 		moveInput = Vector3.zero;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	/*void Update () {
 		if (Input.GetKey(KeyCode.C))
 		{
 			moveInput = Vector3.left;
@@ -24,7 +26,7 @@ public class Walker : MonoBehaviour
 		{
 			moveInput = Vector3.right;
 		}
-	}
+	}*/
 
 	void FixedUpdate()
 	{

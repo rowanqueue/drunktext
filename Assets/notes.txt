@@ -26,4 +26,13 @@ IJKL - Right Thumb Movement
 U - Right Thumb Press
 N - Right Movement
 
-F/H - Hold to look up
+OK SO:
+Textures
+Images for enter/backspace
+better instructions
+crosswalks STOPPING FOR CARS
+
+FIX TEXT DELAY
+
+
+

@@ -22,6 +22,10 @@ public class Writer : MonoBehaviour
 	public float doubt;
 	public float loseAmount;
 	public bool sheKnows;
+	public bool win;
+	public bool momWait;
+	private bool ellipsis;
+	private float duration;
 	
 	public TextAsset texts;
 	public List<string> momTexts;//what your mom says
@@ -71,9 +75,19 @@ public class Writer : MonoBehaviour
 
 	void writeLog(string text)
 	{
-		for (int i = logLines.Length - 1; i > 0; i--)
+		if (logLines[0] == ". . .")
 		{
-			logLines[i] = logLines[i - 1];
+			for (int i = logLines.Length - 1; i > 1; i--)
+			{
+				logLines[i] = logLines[i - 1];
+			}
+		}
+		else
+		{
+			for (int i = logLines.Length - 1; i > 0; i--)
+			{
+				logLines[i] = logLines[i - 1];
+			}	
 		}
 
 		logLines[0] = text;
@@ -140,13 +154,33 @@ public class Writer : MonoBehaviour
 			displayText += "|";
 		}
 		display.text = displayText;
-		if (sheKnows)
+		if (sheKnows || momWait)
 		{
 			yourNextLine.text = "";
 		}
 		else
 		{
 			yourNextLine.text = yourTexts[yourInt];	
+		}
+
+		if (momWait)
+		{
+			duration += Time.deltaTime;
+			if (duration > 1.7f*Random.Range(1.1f,1.25f))
+			{
+				if (doubt > loseAmount)
+				{
+					writeLog("Wait... are you drunk?");
+					sheKnows = true;	
+				}
+				else
+				{
+					writeLog(momTexts[momInt]);	
+				}
+				momWait = false;
+				ellipsis = false;
+				duration = 0;
+			}
 		}
 	}
 
@@ -170,6 +204,10 @@ public class Writer : MonoBehaviour
 		{
 			doubt += 0.05f;
 		}
+		else if (numRight != 0)
+		{
+			doubt += 0.1f;
+		}
 		else
 		{
 			doubt += 0.35f;
@@ -180,18 +218,20 @@ public class Writer : MonoBehaviour
 		written = "@" + written;
 		archive.Add(written);
 		writeLog(written);
-		written = "";
 		MomParse(written,yourTexts[yourInt]);
+		written = "";
 		momInt++;
-		if (doubt > loseAmount)//mom knows!!!!
+		momWait = true;
+		//writeLog(momTexts[momInt]);
+		if (momInt < momTexts.Count)
 		{
-			writeLog("Wait... are you drunk?");
-			sheKnows = true;
+			momWait = true;
+			//writeLog(momTexts[momInt]);
+			yourInt++;
 		}
 		else
 		{
-			writeLog(momTexts[momInt]);
-			yourInt++;
+			win = true;
 		}
 	}
 	public void TapKey(char c)

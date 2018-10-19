@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeadShaking : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class HeadShaking : MonoBehaviour
 	public float mod;
 	private Walker walker;
 	private Vector3 originalPos;
-	public Transform cameraEndPos;
+	public Transform loseCameraEndPos;
+	public Transform winCameraEndPos;
 	private float durationMove;
 	private float duration;
 	
@@ -35,8 +37,27 @@ public class HeadShaking : MonoBehaviour
 
 		if (Writer.me.sheKnows)
 		{
-			transform.position = Vector3.Lerp(originalPos, cameraEndPos.position, durationMove);
+			transform.position = Vector3.Lerp(originalPos, loseCameraEndPos.position, durationMove);
 			durationMove += Time.deltaTime*1.25f;
+			if (durationMove > 1.2f)
+			{
+				if (Input.anyKey)
+				{
+					SceneManager.LoadScene(0);
+				}
+			}
+		}else if (Writer.me.win)
+		{
+			transform.position = Vector3.Lerp(originalPos, winCameraEndPos.position, durationMove);
+			durationMove += Time.deltaTime * 1.25f;
+			if (durationMove > 1.2f)
+			{
+				Walker.me.mod = 0;
+				if (Input.anyKey)
+				{
+					SceneManager.LoadScene(0);
+				}
+			}
 		}
 		else
 		{
